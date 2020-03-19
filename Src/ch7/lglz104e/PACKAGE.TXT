@@ -1,0 +1,12 @@
+The distributable package MUST contain following files:
+
+Filename         Size
+------------    ------
+PACKAGE.TXT        500 This file
+LGLZ.EXE        26 064 English version (286+)
+LGLZ.DOC         4 316 English doc
+LGLZ.RUS        26 304 Russian version (286+)
+LGLZ8086.EXE	26 208 Version for 8086 processor(english)
+LGLZ.TEH         3 376 Some technical information(russian)
+LGOPTHDR.EXE     6 144 Program to optimize EXE-header relocation table
+LGOPTHDR.PAS     2 543 It's source code

@@ -1,0 +1,145 @@
+		=========================================
+		=					=
+		=	   LGLZ Version 1.04e		=
+		=					=
+		=	(C) 1996-99 George Lyapko	=
+		=					=
+		=========================================
+
+	
+	The given program is intended for packing DOS executables(COM,EXE).
+It uses original(?) modification of an LZ77 with 8192 byte sliding window
+dictionary and lazy matching.
+
+	Usage: LGLZ [-|/option] Input_mask [Output_File]
+
+Options:
+	[Output_file] - name of resulting file
+	If not specified, input file is replaced
+
+	-a - Always compress files with overlays
+	-n - Never compress files with overlays
+	-r - Delete overlays
+
+	If the size, specified in EXE-file header does not coincide with
+	true size on a disk, only the loading module is packed, and all
+	other data (usually overlays, or other additional information)
+	is stored after it without compression.
+
+!!!!!!!!!!! Not all files with overlays will work in a compressed form!!!!!!!
+
+	-o - Overwrite existing files
+
+	By default you will be prompted, if the file already exists
+
+	-b - Create backup copies of original files
+
+	At packing with patterns (*.exe and etc.) the program
+	will keep the originals under expansion .bak
+
+	-h - Optimize EXE-header
+
+	Allows to improve packing ratio by sorting of
+	pairs segment/offset in relocation table
+!!! At unpacking the initial table will not be restored 
+(though usually it does not play any role)
+
+	-0 - compression method 0 (default for files up to 38kB)
+	-1 - compression method 1 (default for files larger than 38kB)
+
+	The program uses two various methods of compression of received
+	pairs length/offset, one of which is better for large files
+	
+	-sn - speed of compression (n from 0 to 9,
+	     0 means fastest, 9 - tightest compression).
+	     By default, LGLZ uses n=9.
+
+	-x - Unpack a file
+
+	-q - Don't show compression progress percentage
+
+	-c - Information on files
+
+	Displays the message on whether files, specified in a mask are
+	compressed
+
+	-f - Use the fast self-extracting module
+
+	By default small self-extracting modules are used,
+	that in case of large files a little bit slows down process
+	of the compressed program's loading. Fast modules are 100-200
+	byte larger than default (depending on a method)
+
+	-u - Create a compressed file, which is unextractable
+	     (by this program)
+
+	-d - Change date/time to current system date 
+ 	     (by default date/time is not changed) 	
+
+	-l - License agreement
+
+Examples:
+
+	lglz -hs0uf some.exe some.ex
+	lglz -h -1 -s8 some.exe
+	lglz -h1s8 some.exe
+	lglz -xd some.exe
+
+Brief history
+--------------
+
+	V0.1 (08-94)
+		The first version of the program (LGLZC - COM-files packing)
+	V0.2 (01-95)
+		EXE-files packing (LGLZE)
+	V0.3 (05-95)
+		Optimization of EXE-header
+	V0.4 (09-95)
+		Added fast modules, creation of backup copies
+	V0.5 (12-95)
+		Added method 0 for large files
+	V1.00 (05-03-96)
+		First public release.
+		The programs are incorporated in one,
+		external program for header optimization LGOPTHDR is written
+	V1.01 (12-03-96)
+		Added option -u for unextractable files creation
+	V1.02 (19-03-96)
+		Slightly changed way of unextractable files creation,
+		little bit accelerated packing
+	V1.03 beta (30-05-96) 
+		Unpacking and packing are 2 times faster than before
+	V1.04A (04-12-97)
+		Fixed serious bug in previous version which sometimes
+		causes system crash while packing files, which ends
+		with "xx 00 00"(xx - is non-zero byte)
+	V1.04B (15-12-97)
+		Fixed bug - sometimes program shows that file
+		successfully packed and unpacking doesn't work
+		(example - workshop.exe from BP package);
+		same error causes incorrect output size calculation
+		for some EXE with overlays.
+		Added ability to specify path in input mask.
+	V1.04C (11-03-99)
+		Added -sn switch.
+		Slightly increased speed of packing.
+	V1.04D (17-03-99)
+		Added -q switch.
+		Increased speed by 3-10% (depends on CPU and method).
+		Version for 8086 processor.
+	V1.04E (28-10-99)
+		Fixed bug - compression of R/O executables leeds to crash
+
+Mail address of the author
+--------------------------
+	89607 Ukraine
+	Mukachevo
+	ul.G.Petrova, 30/66
+	Lyapko Yuriy Georgievich
+E-mail
+------
+lyapko@yahoo.com
+
+Web
+---
+http://www.geocities.com/SiliconValley/Lab/6606

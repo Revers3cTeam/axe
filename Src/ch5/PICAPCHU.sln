@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PICAPCHU", "PICAPCHU\PICAPCHU.csproj", "{068D14EF-F0A1-4F9D-8E27-58B4317830C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Debug|x64.ActiveCfg = Debug|x64
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Debug|x64.Build.0 = Debug|x64
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Release|x64.ActiveCfg = Release|x64
+		{068D14EF-F0A1-4F9D-8E27-58B4317830C6}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DACACAC7-C444-4127-9390-9DBF98BDE69F}
+	EndGlobalSection
+EndGlobal
